@@ -5,6 +5,8 @@
 </template>
 
 <script>
+    import Todo from './todo'
+    
     export default {
         name: 'todos',
         components: {
