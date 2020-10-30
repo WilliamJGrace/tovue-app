@@ -1,7 +1,11 @@
 <template>
     <div>
         <h2>My todolist</h2>
-        <Todo></Todo>
+        <ul>
+            <li v-bind:key="todo.id" v-for="todo in todos">                
+                <Todo v-bind:todo="todo"></Todo>
+            </li>
+        </ul>
     </div>
 </template>
 
