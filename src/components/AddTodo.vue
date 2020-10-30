@@ -9,7 +9,37 @@
 </template>
 
 <script>
+    import uuid from 'uuid'
+
+
+
+
+
     export default {
+        name: "Addtodo",
+        data() {
+            return {
+                title: ''
+            }
+        },
+        methods: {
+            addTodo(e) {
+
+                e.preventDefault()
+
+                const newTodoObj = {
+                    id: uuid.v4(),
+                    title: this.title,
+                    completed: false
+                }
+
+                this.$emit('add-todo', newTodoObj);
+                this.title = '';
+
+
+            }
+        }
+
         
     }
 </script>
