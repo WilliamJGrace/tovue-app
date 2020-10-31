@@ -1,42 +1,58 @@
 <template>
   <div id="app">
     <Todos v-bind:todos="todos"/>
+    <AddTodo v-on:add-todo="AddTodo"/>
   </div>
 </template>
 
 <script>
 
 import Todos from './components/todos'
+import AddTodo from './components/AddTodo'
 
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    Todos
+    Todos,
+    AddTodo
   },
   data() {
     return {
       todos: [
-        {id: 1,
-        title: "Go to the Gym",
-        completed: false
+        {
+          id: 1,
+          title: 'Go workout',
+          completed: false
         },
-        {id: 2,
-        title: "Walk Dog",
-        completed: false
+        {
+          id: 2,
+          title: 'Do laundry',
+          completed: false
         },
-        {id: 3,
-        title: "Go shopping",
-        completed: false
+        {
+          id: 3,
+          title: 'Cook food',
+          completed: false
         },
-        {id: 4,
-        title: "Call the vet",
-        completed: false
+        {
+          id: 4,
+          title: 'Clean up room',
+          completed: false
+        },
+        {
+          i: 5,
+          title: 'Finish work',
+          completed: false
         }
-      ]
+      ],
+    }
+  },
+  methods: {
+    addTodo(newTodoObj) {
+      this.todos = [...this.todos, newTodoObj];
     }
   }
-
 }
 </script>
 
